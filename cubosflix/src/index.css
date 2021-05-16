@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: #FFF;
+}
+
+#root {
+  margin: 0;
+  display: grid;
+  min-height: 100vh;
+  background-color: #04080ae7;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #04080ae7;
+}
+
+header {
+  display: flex;
+  background-color: #0F1C26;
+  color: #FDFDFD;
+  justify-content: space-evenly;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+header #lupa {
+  margin-left: -2rem;
+  margin-bottom: -0.4rem;
+  width: 1.2rem;
+  cursor: pointer;
+}
+
+header .menu {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+header .search-field {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #171B1E;
+  color: #FFF;
+}
+
+header .search-field:hover {
+  border-color: #FFF;
+}
+
+header .search-field:focus {
+  border-color: #FFF;
+}
+
+header p img {
+  max-width: 3.5rem;
+  max-height: 3.5rem;
+}
+
+header button {
+  border: none;
+  background-color: inherit;
+  color: #FFF;
+  cursor: pointer;
+}
+
+header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+main {
+  background-color: #0810142a;
+  min-width: 100vh;
+}
+
+main h1 {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-left: 6rem;
+}

@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    gap: 2.42rem;
+    margin-bottom: 1.5rem;
+    margin-left: 4rem;
+}
+
+.filtro {
+    all: unset;
+    width: 10.5rem;
+    height: 2.375rem;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    color: #9495A5;
+    background: rgba(82, 74, 80, 0.2);
+    border: 0.01rem solid;
+    box-sizing: border-box
+}
+
+.filtro:hover {
+    border: 2px solid #E183C8;
+    color: #E183C8, 20%;
+}
+
+.filtro-ativo {
+    background-color: #e183c86c;
+    border: 2px solid #E183C8;
+    color: #E183C8, 20%;
+    font-weight: 700;
+}

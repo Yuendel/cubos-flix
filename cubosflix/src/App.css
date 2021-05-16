@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+* {
+    z-index: 1;
+}
+
+.destaques {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.filmes {
+    display: flex;
+    gap: 2.4rem;
+    max-width: 70.563rem;
+    flex-wrap: wrap;
+    margin-left: 4rem;
+}
+
+.relogio {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4rem;
+    background-image: url('./images/bg-promotion.svg');
+    width: 58.5rem;
+    height: 7.438rem;
+    cursor: pointer;
+}
+
+.relogio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+.relogio .cupom h2 {
+    font-size: 1rem;
+}
+
+.relogio h1, .relogio h2 {
+    color: #0F0915;
+    font-family: 'Quantico', sans-serif;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.relogio .cupom {
+    display: flex;
+    margin-left: 2.1rem;
+    gap: 0.5rem;
+}
+
+.relogio .timer {
+    display: grid;
+    gap: 1rem;
+    align-content: center;
+}
+
+.relogio .timerCupom {
+    display: flex;
+    gap: 1rem;
+}
+
+.relogio .linha {
+    display: grid;
+    border-left: 0.2rem solid #F294D8;
+    opacity: 0.2;
+    max-height: 3rem;
+    margin-top: 2rem;
+}
+
+#moneyImg {
+    z-index: 2;
+    margin-top: -2rem;
+    margin-right: 2rem;
+}
+
+.aside {
+    position: sticky;
+}
