@@ -18,10 +18,10 @@ export default function App() {
   let [todosFilmes, setTodosFilmes] = useState([]);
   const [filtro, setFiltro] = useState('todas');
   let [filmesTop, setFilmesTop] = useState([]);
-  const [sacola, setSacola] = useState(['Anônimo']);
-  const [timer, setTimer] = useState(120);
+  const [sacola, setSacola] = useState([]);
+  const [timer, setTimer] = useState(60);
+  const [pesquisa, setPesquisa] = useState("");
   const intervalId = useRef(null);
-
 
   useEffect(() => {
     if (timer <= 0) {
@@ -54,36 +54,39 @@ export default function App() {
     setFilmesTop(FilmesTop)
   }, [])
 
+  useEffect(() => {
+    const filmeBuscado = Movies.filter((e) => e.title.includes(pesquisa) === true);
+    if (filmeBuscado) {
+      setTodosFilmes(filmeBuscado);
+    } else {
+      setTodosFilmes(Movies);
+    }
+  }, [pesquisa]);
+
   function handleAdicionarSacola(title) {
-    const produto = Movies.find((f) => f.title === title);
-    setSacola([...sacola, produto]);
+    const indice = sacola.findIndex((produto) => produto.title === title);
+    const novaSacola = [...sacola];
+    novaSacola.splice(-1, 0, indice);
+    setSacola([...novaSacola]);
+
   }
 
   function handleRetirarSacola(title) {
-    const produto = Movies.find((f) => f.title === title);
     const indice = sacola.findIndex((produto) => produto.title === title);
-    const espelhoSacola = [...sacola];
+    const novaSacola = [...sacola];
+    novaSacola.splice(indice, 1);
+    setSacola([...novaSacola]);
 
-    if (indice !== -1) {
-      if (produto.quantidade === 1) {
-        espelhoSacola.splice(indice, 1);
-      } else {
-        espelhoSacola[indice].quantidade -= 1;
-      }
-      setSacola([...espelhoSacola]);
-      return;
-    }
+
   }
-
-
-
+  console.log(sacola)
 
   return (
     <div className="App">
       <header>
         <img src={logo} alt="logo" />
-        <form action="get">
-          <input type="text" placeholder="Pesquise filmes..." className="search-field" size="50"></input> <img src={lupa} alt="Pesquisar" id='lupa' />
+        <form action="get" onSubmit={(e) => { e.preventDefault() }}>
+          <input type="text" placeholder="Pesquise filmes..." className="search-field" onChange={(e) => setPesquisa(e.target.value)} size="50"></input> <img src={lupa} alt="Pesquisar" id='lupa' />
         </form>
         <button className='menu'> <img src={favoritos} alt="favoritos" /> Favoritos</button>
         <button className='menu'> <img src={promocoes} alt="promoções" />Promoções</button>
@@ -110,7 +113,7 @@ export default function App() {
         </div>
         <div className='aside'>
           <Sacola
-            cupom='cupom'
+            cupom='sintoQuePoderiaTerFeitoMUITOMelhor'
             sacola={sacola}
             remover={handleRetirarSacola}
             adicionar={handleAdicionarSacola}
@@ -124,8 +127,7 @@ export default function App() {
               nome={filme.title}
               preco={filme.price}
               nota={filme.starsCount}
-              id={filme.id}
-              addSacola={(produto) => handleAdicionarSacola(produto)}
+              addSacola={(filme) => handleAdicionarSacola(filme.title)}
             />))}
         </div>
         <h1>Filmes</h1>
@@ -137,7 +139,7 @@ export default function App() {
               nome={filme.title}
               preco={filme.price}
               nota={filme.starsCount}
-              addSacola={(produto) => handleAdicionarSacola(produto)}
+              addSacola={(filme) => handleAdicionarSacola(filme.title)}
             />
           ))}
         </div>

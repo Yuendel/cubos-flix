@@ -73,6 +73,21 @@
     max-height: 5rem;
 }
 
+.card .favoritar {
+    position: absolute;
+    border: none;
+    bottom: 16.8rem;
+    right: 8.4rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.card .favoritar img {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+    background-color: transparent;
+}
+
 .card #star {
     max-width: 1rem;
     max-height: 2rem;
