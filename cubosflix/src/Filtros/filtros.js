@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import '../src/filtros.css';
+import './filtros.css';
 
 export default function Filtros({ setFiltro }) {
     const [filtroAtivo, setFiltroAtivo] = useState('todas');

@@ -9,7 +9,7 @@ import promocoes from './images/promotion-icon.svg'
 import lupa from './images/search-icon.svg'
 import Card from './Card/Card';
 import Sacola from './Sacola/sacola';
-import Filtros from './filtros';
+import Filtros from './Filtros/filtros';
 import Movies from "./data.js"
 import './App.css';
 
